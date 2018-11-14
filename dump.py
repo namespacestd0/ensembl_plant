@@ -261,7 +261,7 @@ class GenericBioMart(BioMart):
         self._fetch_data(outfile, attributes, filters, header=header, debug=debug)
 
 
-class EnsemblBioMart(GenericBioMart):
+class EnsemblPlantBioMart(GenericBioMart):
 
     SRC_NAME = "ensembl_plant"
     SRC_ROOT_FOLDER = os.path.join(DATA_ARCHIVE_ROOT, SRC_NAME)
