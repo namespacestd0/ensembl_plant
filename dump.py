@@ -1,4 +1,4 @@
-from hub.dataload.sources.ensemble import dump
+from hub.dataload.sources.ensembl.dump import GenericBioMart
 
 class EnsemblPlantBioMart(GenericBioMart):
 
