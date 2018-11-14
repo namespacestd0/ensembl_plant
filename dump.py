@@ -1,4 +1,9 @@
-from hub.dataload.sources.ensembl.dump import GenericBioMart
+import os
+from ftplib import FTP
+from config import DATA_ARCHIVE_ROOT, logger as logging
+from biothings.utils.dataload import tab2list
+from biothings.utils.common import is_int
+from hub.dataload.sources.ensembl.dump import GenericBioMart, XML_QUERY_TEMPLATE
 
 class EnsemblPlantBioMart(GenericBioMart):
 
