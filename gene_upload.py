@@ -5,7 +5,7 @@ from biothings.utils.common import dump2gridfs
 class EnsemblGeneUploader(uploader.MergerSourceUploader):
 
     name = "ensembl_gene"
-    main_source = "ensembl"
+    main_source = "ensembl_plant"
     __metadata__ = {"mapper" : 'ensembl2entrez'}
 
     def load_data(self, data_folder):

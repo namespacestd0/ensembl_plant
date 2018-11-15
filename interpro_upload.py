@@ -4,7 +4,7 @@ import biothings.hub.dataload.uploader as uploader
 class EnsemblInterproUploader(uploader.MergerSourceUploader):
 
     name = "ensembl_interpro"
-    main_source = "ensembl"
+    main_source = "ensembl_plant"
     __metadata__ = {"mapper" : 'ensembl2entrez'}
 
     def load_data(self, data_folder):

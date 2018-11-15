@@ -4,7 +4,7 @@ import biothings.hub.dataload.uploader as uploader
 class EnsemblPfamUploader(uploader.MergerSourceUploader):
 
     name = "ensembl_pfam"
-    main_source = "ensembl"
+    main_source = "ensembl_plant"
 
     def load_data(self, data_folder):
         ep = EnsemblParser(data_folder)

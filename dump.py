@@ -5,7 +5,7 @@ from biothings.utils.dataload import tab2list
 from biothings.utils.common import is_int
 from hub.dataload.sources.ensembl.dump import GenericBioMart, XML_QUERY_TEMPLATE
 
-class EnsemblPlantBioMart(GenericBioMart):
+class EnsemblBioMart(GenericBioMart):
 
     SRC_NAME = "ensembl_plant"
     SRC_ROOT_FOLDER = os.path.join(DATA_ARCHIVE_ROOT, SRC_NAME)
