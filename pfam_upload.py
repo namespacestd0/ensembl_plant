@@ -1,23 +1,6 @@
-from .parser import EnsemblParser
-import biothings.hub.dataload.uploader as uploader
+from hub.dataload.sources.ensembl.pfam_upload import EnsemblPfamUploader
 
-class EnsemblPfamUploader(uploader.MergerSourceUploader):
+class EnsemblPlantPfamUploader(EnsemblPfamUploader):
 
-    name = "ensembl_pfam"
+    name = "ensembl_plant_pfam"
     main_source = "ensembl_plant"
-
-    def load_data(self, data_folder):
-        ep = EnsemblParser(data_folder)
-        ensembl2pfam = ep.load_ensembl2pfam()
-        return ensembl2pfam
-
-    @classmethod
-    def get_mapping(klass):
-        mapping = {
-            "pfam": {
-                "type": "keyword",
-                "normalizer" : "keyword_lowercase_normalizer",
-                'copy_to': ['all'],
-            }
-        }
-        return mapping

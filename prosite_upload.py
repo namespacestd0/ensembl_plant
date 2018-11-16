@@ -1,24 +1,6 @@
-from .parser import EnsemblParser
-import biothings.hub.dataload.uploader as uploader
+from hub.dataload.sources.ensembl.prosite_upload import EnsemblPrositeUploader
 
-class EnsemblPrositeUploader(uploader.MergerSourceUploader):
+class EnsemblPlantPrositeUploader(EnsemblPrositeUploader):
 
-    name = "ensembl_prosite"
+    name = "ensembl_plant_prosite"
     main_source = "ensembl_plant"
-    __metadata__ = {"mapper" : 'ensembl2entrez'}
-
-    def load_data(self, data_folder):
-        ep = EnsemblParser(data_folder)
-        ensembl2prosite = ep.load_ensembl2prosite()
-        return ensembl2prosite
-
-    @classmethod
-    def get_mapping(klass):
-        mapping = {
-            "prosite": {
-                "type": "keyword",
-                "normalizer" : "keyword_lowercase_normalizer",
-                'copy_to': ['all'],
-            }
-        }
-        return mapping
