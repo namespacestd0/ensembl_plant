@@ -46,8 +46,6 @@ class EnsemblPlantBioMart(GenericBioMart):
             self.logger.info('Parsing "dataset_names.txt.gz"...')
             species_li = tab2list(outfile, (0, 4, 5), header=0)
             species_li = [[x[0]] + [x[2]] + [x[1]] for x in species_li]
-            #test run
-            species_li = species_li[:4]
             species_li = [x[:-1] + [is_int(x[-1]) and int(x[-1]) or None] for x in species_li]
             self.logger.info('Done.')
         finally:
